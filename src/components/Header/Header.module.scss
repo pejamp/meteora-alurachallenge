@@ -1,0 +1,43 @@
+@import '../../styles/style-guide.scss';
+
+.container {
+  height: calc(58px + 37px);
+  position: relative;
+  
+  .main {
+    background-color: $header-background;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 58px;
+  }
+
+  .search {
+    position: absolute;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+    gap: 8px;
+    z-index: -1;
+
+    &__input {
+      padding: 8px 12px;
+      border: 1px solid $black;
+    }
+
+    &__btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid $black;
+      background: transparent;
+      font-weight: 500;
+    }
+  }
+}
