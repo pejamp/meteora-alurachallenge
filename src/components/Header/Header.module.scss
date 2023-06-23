@@ -2,21 +2,65 @@
 
 .container {
   height: calc(58px + 37px);
+  width: 100vw;
   position: relative;
+
+  @include responsive-layout($bp-tablet) {
+    height: 58px;
+  }
+  @include responsive-layout($bp-desktop) {
+    
+  }
   
-  .main {
+  .navigation {
     background-color: $header-background;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     height: 58px;
+
+    @include responsive-layout($bp-tablet) {
+      padding: 0 23px;
+      justify-content: flex-start;
+
+      img {
+        height: 24px;
+      }
+    }
+    @include responsive-layout($bp-desktop) {
+      
+    }
+
+    .navbar {
+      @include hide-on-mobile;
+
+      &__links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin: 0 20px;
+      }
+
+      &__link {
+        color: $white;
+        font-size: 13px;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .hide__desktop {
+      @include hide-on-desktop;
+    }
   }
 
   .search {
     position: absolute;
     top: 58px;
-    left: 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -25,9 +69,31 @@
     gap: 8px;
     z-index: -1;
 
+    @include responsive-layout($bp-tablet) {
+      top: 0;
+      right: 0;
+      padding: 10px 23px;
+      z-index: 1;
+      width: min-content;
+      height: 100%;
+      gap: 16px;
+    }
+    @include responsive-layout($bp-desktop) {
+      
+    }
+
     &__input {
       padding: 8px 12px;
       border: 1px solid $black;
+
+      @include responsive-layout($bp-tablet) {
+        border-color: $white;
+        max-width: 145px;
+        font-size: 13px;
+      }
+      @include responsive-layout($bp-desktop) {
+        
+      }
     }
 
     &__btn {
@@ -38,6 +104,15 @@
       border: 1px solid $black;
       background: transparent;
       font-weight: 500;
+
+      @include responsive-layout($bp-tablet) {
+        border-color: $white;
+        color: $white;
+        font-size: 13px;
+      }
+      @include responsive-layout($bp-desktop) {
+        
+      }
     }
   }
 }

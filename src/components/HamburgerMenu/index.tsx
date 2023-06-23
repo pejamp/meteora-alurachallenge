@@ -15,7 +15,7 @@ export function HamburgerMenu() {
         <MenuIcon />
       </button>
       <nav
-        className={`${styles.listContainer} ${isOpen ? styles.list__open : ""}`}
+        className={`${styles.dropdown} ${isOpen ? styles.dropdown__open : ""}`}
       >
         <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
           <CloseIcon />

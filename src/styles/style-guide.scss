@@ -12,3 +12,27 @@ $light-gray: #CED4DA;
 // header
 $header-background: $black;
 $hamburger-menu: $dark-gray;
+
+// breakpoints
+$bp-tablet: 740px;
+$bp-desktop: 960px;
+
+@mixin responsive-layout($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hide-on-mobile {
+  display: none;
+
+  @include responsive-layout($bp-tablet) {
+    display: initial;
+  }
+}
+
+@mixin hide-on-desktop {
+  @include responsive-layout($bp-tablet) {
+    display: none;
+  }
+}
