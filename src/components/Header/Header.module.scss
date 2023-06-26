@@ -9,7 +9,7 @@
     height: 58px;
   }
   @include responsive-layout($bp-desktop) {
-    
+    height: 58px;
   }
   
   .navigation {
@@ -29,7 +29,12 @@
       }
     }
     @include responsive-layout($bp-desktop) {
-      
+      padding: 0 23px;
+      justify-content: flex-start;
+
+      img {
+        height: 32px;
+      }
     }
 
     .navbar {
@@ -40,6 +45,11 @@
         align-items: center;
         gap: 20px;
         margin: 0 20px;
+
+        @include responsive-layout($bp-desktop) {
+          gap: 40px;
+          margin: 0 40px;
+        }
       }
 
       &__link {
@@ -49,6 +59,10 @@
         a {
           color: inherit;
           text-decoration: none;
+        }
+
+        @include responsive-layout($bp-desktop) {
+          font-size: 16px
         }
       }
     }
@@ -79,7 +93,13 @@
       gap: 16px;
     }
     @include responsive-layout($bp-desktop) {
-      
+      top: 0;
+      right: 0;
+      padding: 10px 23px;
+      z-index: 1;
+      width: min-content;
+      height: 100%;
+      gap: 16px;
     }
 
     &__input {
@@ -92,7 +112,9 @@
         font-size: 13px;
       }
       @include responsive-layout($bp-desktop) {
-        
+        border-color: $white;
+        max-width: 170px;
+        font-size: 16px;
       }
     }
 
@@ -111,7 +133,9 @@
         font-size: 13px;
       }
       @include responsive-layout($bp-desktop) {
-        
+        border-color: $white;
+        color: $white;
+        font-size: 16px;
       }
     }
   }
