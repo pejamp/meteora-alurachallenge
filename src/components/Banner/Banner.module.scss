@@ -1,1 +1,29 @@
 @import '../../styles/style-guide.scss';
+
+.container {
+  height: 415px;
+  width: 100%;
+  position: relative;
+  top: 90px;
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+  }
+  .swiper {
+    .pagination__bullet {
+      background: white;
+      border-radius: 0;
+      width: 30px;
+      height: 3px;
+    }
+
+  }
+
+  .swiperButtonNext, .swiperButtonPrev {
+    color: #000;
+    background-color: #fff;
+    //position: absolute;
+    
+  }
+}

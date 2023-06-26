@@ -1,9 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper';
 import { useState, useEffect } from 'react';
 import styles from './Banner.module.scss';
 import bannerImage1 from 'src/assets/Mobile/Banner carousel 1 _ 375.png';
 import bannerImage2 from 'src/assets/Tablet/Banner carousel 1 _ 768.png';
 import bannerImage3 from 'src/assets/Desktop/Banner-carousel 1 _ 1440 (1).png';
+
 
 export function Banner() {
   const images = [
@@ -34,14 +36,18 @@ export function Banner() {
 
   useEffect(() => {
     const handleResize = () => {
+      let activeImagePath = [];
+
       for (const image of images) {
-        image.src.forEach((src) => {
+        for (const src of image.src) {
           if (window.matchMedia(src.size).matches) {
-            setActiveImage([...activeImage, src.path]);
+            activeImagePath.push(src.path);
+            break;
           }
         }
-        );
       }
+
+      setActiveImage(activeImagePath)
     };
 
     handleResize();
@@ -50,23 +56,37 @@ export function Banner() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const slides = activeImage.map((src, index) => (
-    <SwiperSlide key={index}>
-      <img src={src} alt="" />
-    </SwiperSlide>
-  ));
-  
-
   return (
-    <div>
+    <div className={styles.container}>
       <Swiper
-        spaceBetween={50}
+        className={styles.swiper}
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={8}
         slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
+        loop
+        navigation={{
+          nextEl: `${styles.swiperButtonNext}`,
+          prevEl: `${styles.swiperButtonPrev}`,
+        }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{ 
+          clickable: true, 
+          renderBullet: (_, className) => {
+            return `<button class="${className} ${styles.pagination__bullet}"></button>`
+          }  
+        }}
       >
-        {slides}
+        {activeImage.map((src, index) => (
+          <SwiperSlide key={index}>
+            <img className={styles.image} src={src} alt="" />
+          </SwiperSlide>
+        ))}
       </Swiper>
+      <button className={styles.swiperButtonNext}>Próximo</button>
+      <button className={styles.swiperButtonPrev}>Anterior</button>
     </div>
   )
 }
