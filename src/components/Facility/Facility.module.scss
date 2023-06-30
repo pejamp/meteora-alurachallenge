@@ -1,0 +1,29 @@
+@import '../../styles/style-guide.scss';
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  &__icon {
+    max-width: 100%;
+    width: 56px;
+  }
+
+  &__content {
+    display: grid;
+    gap: 16px;
+
+    .title {
+      font-weight: 700;
+      color: $neon-yellow;
+      text-transform: uppercase;
+    }
+
+    .description {
+      max-width: 200px;
+      font-size: 13px;
+      color: $white;
+    }
+  }
+}

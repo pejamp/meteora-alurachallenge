@@ -1,0 +1,12 @@
+.sections {
+  padding: 24px 26px 48px;
+  display: grid;
+  gap: 54px;
+
+  .category__cards {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    column-gap: 30px;
+  }
+}
