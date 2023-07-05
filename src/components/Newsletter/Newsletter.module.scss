@@ -1,0 +1,57 @@
+@import '../../styles/style-guide.scss';
+
+.container {
+  margin: 28px;
+  padding: 24px 16px;
+  border: 1px solid $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+
+  @include responsive-layout($bp-tablet) {
+    margin: 39px;
+    padding: 40px;
+    border-width: 2px;
+  }
+  @include responsive-layout($bp-desktop) {
+    max-width: 730px;
+    margin: 65px auto;
+  }
+
+  .text {
+    text-align: center;
+    color: $text;
+    line-height: 23px;
+
+    @include responsive-layout($bp-tablet) {
+      font-size: 1.25rem;
+      max-width: 570px;
+    }
+    @include responsive-layout($bp-desktop) {
+      max-width: 100%;
+    }
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .input {
+      width: 100%;
+      max-width: 200px;
+      padding: 8px 16px;
+      border: 1px solid $black;
+      color: $text;
+      border-right: 0;
+
+      @include responsive-layout($bp-tablet) {
+        max-width: 370px;
+      }
+      @include responsive-layout($bp-desktop) {
+        max-width: 456px;
+      }
+    }
+  }
+}

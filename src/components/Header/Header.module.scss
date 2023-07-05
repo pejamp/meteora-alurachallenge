@@ -1,14 +1,11 @@
 @import '../../styles/style-guide.scss';
 
 .container {
-  width: 100vw;
+  width: 100%;
   position: relative;
 
   @include responsive-layout($bp-tablet) {
-    height: 58px;
-  }
-  @include responsive-layout($bp-desktop) {
-    height: 58px;
+    min-height: 58px;
   }
   
   .navigation {

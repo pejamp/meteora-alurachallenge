@@ -1,10 +1,14 @@
 import React from 'react'
 import styles from './Button.module.scss';
 
-export function Button() {
+interface ButtonProps {
+  children: string;
+}
+
+export function Button({ children }: ButtonProps) {
   return (
     <button className={styles.button}>
-      Ver mais
+      {children}
     </button>
   )
 }

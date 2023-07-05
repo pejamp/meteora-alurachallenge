@@ -1,12 +1,42 @@
+@import '../../styles/style-guide.scss';
+
 .sections {
   padding: 24px 26px 48px;
   display: grid;
+  justify-content: center;
   gap: 54px;
+
+  @include responsive-layout($bp-tablet) {
+    padding: 40px;
+    gap: 45px;
+  }
+  @include responsive-layout($bp-desktop) {
+    padding: 72px;
+    gap: 48px;
+  }
 
   .category__cards {
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
     row-gap: 16px;
     column-gap: 30px;
+
+    @include responsive-layout($bp-tablet) {
+      row-gap: 24px;
+    }
+  }
+
+  .products__cards {
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    
+    @include responsive-layout($bp-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include responsive-layout($bp-desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }

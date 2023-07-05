@@ -6,10 +6,21 @@
   align-items: center;
   gap: 24px;
 
+  @include responsive-layout($bp-tablet) {
+    gap: 32px;
+  }
+  @include responsive-layout($bp-desktop) {
+    max-width: 1110px;
+  }
+
   .section__title {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: 500;
     color: $section-title;
     text-align: center;
+
+    @include responsive-layout($bp-desktop) {
+      font-size: 2rem;
+    }
   }
 }

@@ -6,8 +6,12 @@
   gap: 24px;
 
   &__icon {
-    max-width: 100%;
     width: 56px;
+    object-fit: contain;
+
+    @include responsive-layout($bp-tablet) {
+      width: 72px;
+    }
   }
 
   &__content {

@@ -2,21 +2,37 @@
 
 .container {
   display: grid;
-  align-items: center;
+  justify-content: center;
   gap: 32px;
   padding: 32px 26px;
   background-color: $facility-background;
 
+  @include responsive-layout($bp-tablet) {
+    gap: 40px;
+    padding: 40px;
+  }
+
   .section__title {
     text-align: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
     color: $white;
+
+    @include responsive-layout($bp-tablet) {
+      font-size: 2rem;
+    }
   }
 
   .section__list {
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    @include responsive-layout($bp-tablet) {
+      align-items: center;
+    }
+    @include responsive-layout($bp-desktop) {
+      flex-direction: row;
+    }
   }
 }

@@ -5,6 +5,8 @@ import styles from './Home.module.scss';
 import { CategoryCard } from 'src/components/CategoryCard';
 import { Facilities } from 'src/components/Facilities';
 import { ProductCard } from 'src/components/ProductCard';
+import { Newsletter } from 'src/components/Newsletter';
+import { Footer } from 'src/components/Footer';
 
 export function Home() {
   return (
@@ -21,14 +23,17 @@ export function Home() {
             </div>
           </Section>
           <Section title='Produtos que estão bombando!'>
-            <div className={styles.category__cards}>
+            <div className={styles.products__cards}>
+              <ProductCard />
+              <ProductCard />
               <ProductCard />
             </div>
           </Section>
         </div>
         <Facilities />
+        <Newsletter />
       </main>
-      <footer></footer>
+      <Footer />
     </div>
   )
 }

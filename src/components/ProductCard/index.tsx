@@ -14,7 +14,7 @@ export function ProductCard() {
           verão. Modelagem unissex.
         </p>
         <span className={styles.price}>R$ 70,00</span>
-        <Button />
+        <Button>Ver mais</Button>
       </div>
     </div>
   );

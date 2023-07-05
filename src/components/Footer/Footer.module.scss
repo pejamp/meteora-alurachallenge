@@ -1,0 +1,20 @@
+@import '../../styles/style-guide.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 17px 23px;
+  background-color: $footer-background;
+
+  .copyright {
+    max-width: 246px;
+    text-align: center;
+    color: $white;
+    font-size: 0.81rem;
+    line-height: 20px;
+
+    @include responsive-layout($bp-tablet) {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,15 +1,24 @@
 @import '../../styles/style-guide.scss';
 
 .card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: $category-card;
   max-width: 146px;
+  min-height: 192px;
+
+  @include responsive-layout($bp-tablet) {
+    max-width: 209px;
+  }
+  @include responsive-layout($bp-desktop) {
+    max-width: 160px;
+  }
 
   &__image {
-    max-width: 100%;
-    height: 157px;
+    width: fit-content;
     object-fit: contain;
+    align-self: center;
   }
 
   &__text {
