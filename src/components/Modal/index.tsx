@@ -9,7 +9,7 @@ interface ModalProps {
   children: ReactNode;
 }
 
-export function Modal({ children, isOpen, onClose }: ModalProps) {
+export function Modal({ children, isOpen = false, onClose }: ModalProps) {
   return (
     <div className={`${styles.overlay} ${isOpen ? styles.overlay__active : ''}`}>
       <dialog className={styles.container} open={isOpen} onClose={onClose}>

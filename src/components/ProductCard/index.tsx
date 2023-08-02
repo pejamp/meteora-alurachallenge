@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./ProductCard.module.scss";
 import shirtImage from "src/assets/Desktop/Imagens Cards/Camiseta.png";
 import { Button } from "../Button";
-import { Modal } from "../Modal";
+import { ProductModal } from "../ProductModal";
 
 export function ProductCard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,10 +29,7 @@ export function ProductCard() {
           <Button onClick={handleOpenModal}>Ver mais</Button>
         </div>
       </div>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <h2>Modal Content</h2>
-        <p>This is the content of the modal.</p>
-      </Modal>
+      <ProductModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
