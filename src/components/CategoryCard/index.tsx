@@ -1,12 +1,14 @@
-import React from 'react'
+import { ICategory } from 'src/shared/interfaces/ICategory';
 import styles from './CategoryCard.module.scss';
-import categoryImage from 'src/assets/Mobile/Categorias/Categoria calçados.png';
+import { useProductContext } from 'src/common/contexts/ProductContext';
 
-export function CategoryCard() {
+export function CategoryCard({ name, image }: ICategory) {
+  const { filterByCategory } = useProductContext();
+
   return (
-    <div className={styles.card}>
-      <img className={styles.card__image} src={categoryImage} alt="" />
-      <p className={styles.card__text}>Calçados</p>
+    <div className={styles.card} onClick={() => filterByCategory(name)}>
+      <img className={styles.card__image} src={image} alt={name} />
+      <p className={styles.card__text}>{name}</p>
     </div>
   )
 }

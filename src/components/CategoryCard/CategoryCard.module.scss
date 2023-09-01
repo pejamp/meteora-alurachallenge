@@ -4,9 +4,11 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background-color: $category-card;
   max-width: 146px;
   min-height: 192px;
+  cursor: pointer;
 
   @include responsive-layout($bp-tablet) {
     max-width: 209px;
