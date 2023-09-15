@@ -28,7 +28,14 @@ export function ProductCard({ name, image, description, price }: IProduct) {
           <Button onClick={handleOpenModal}>Ver mais</Button>
         </div>
       </div>
-      <ProductModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <ProductModal 
+        isOpen={isModalOpen}
+        onClose={handleCloseModal} 
+        name={name}
+        image={image}
+        description={description}
+        price={price}
+      />
     </>
   );
 }

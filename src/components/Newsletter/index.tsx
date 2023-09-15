@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Button } from '../Button'
 import styles from './Newsletter.module.scss';
 import { Modal } from '../Modal';

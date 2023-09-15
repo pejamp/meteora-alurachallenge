@@ -122,6 +122,7 @@
       border: 1px solid $black;
       background: transparent;
       font-weight: 500;
+      cursor: pointer;
 
       @include responsive-layout($bp-tablet) {
         border-color: $white;

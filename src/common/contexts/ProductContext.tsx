@@ -32,6 +32,7 @@ export const ProductProvider = (props: { children: ReactNode }) => {
 };
 
 export const useProductContext = () => {
+  const [filterText, setFilterText] = useState('');
   const { products, setProducts, filteredProducts, setFilteredProducts } =
     useContext(ProductContext);
 
@@ -43,8 +44,12 @@ export const useProductContext = () => {
         (product) => product.category === category
       );
       setFilteredProducts(filtered);
-      console.log(filtered);
     }
+  }
+
+  function searchByText() {
+    const filtered = products.filter((product) => product.name.toLowerCase().includes(filterText.toLowerCase()))
+    setFilteredProducts(filtered);
   }
 
   useEffect(() => {
@@ -66,5 +71,7 @@ export const useProductContext = () => {
     products: filteredProducts.length ? filteredProducts : products,
     setProducts,
     filterByCategory,
+    setFilterText,
+    searchByText
   };
 };

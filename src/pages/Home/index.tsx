@@ -1,14 +1,14 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+import styles from "./Home.module.scss";
 import { Header } from "src/components/Header";
 import { Banner } from "src/components/Banner";
 import { Section } from "src/components/Section";
-import styles from "./Home.module.scss";
 import { CategoryCard } from "src/components/CategoryCard";
 import { Facilities } from "src/components/Facilities";
 import { ProductCard } from "src/components/ProductCard";
 import { Newsletter } from "src/components/Newsletter";
 import { Footer } from "src/components/Footer";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { ICategory } from "src/shared/interfaces/ICategory";
 import { useProductContext } from "src/common/contexts/ProductContext";
 
@@ -32,7 +32,7 @@ export function Home() {
   }, []);
 
   return (
-    <div>
+    <>
       <Header />
       <main>
         <Banner />
@@ -61,6 +61,6 @@ export function Home() {
         <Newsletter />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

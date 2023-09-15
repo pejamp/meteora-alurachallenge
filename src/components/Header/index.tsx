@@ -1,8 +1,11 @@
-import styles from './Header.module.scss';
-import Logo from '../../assets/Desktop/logo-desktop.png'
-import { HamburgerMenu } from '../HamburgerMenu';
+import styles from "./Header.module.scss";
+import Logo from "../../assets/Desktop/logo-desktop.png";
+import { HamburgerMenu } from "../HamburgerMenu";
+import { useProductContext } from "src/common/contexts/ProductContext";
 
 export function Header() {
+  const { setFilterText, searchByText } = useProductContext();
+
   return (
     <header className={styles.container}>
       <div className={styles.navigation}>
@@ -28,9 +31,14 @@ export function Header() {
         </div>
       </div>
       <div className={styles.search}>
-        <input className={styles.search__input} type="text" placeholder='Digite o produto' />
-        <button className={styles.search__btn}>Buscar</button>
+        <input
+          className={styles.search__input}
+          type="text"
+          onChange={(event) => setFilterText(event.target.value)}
+          placeholder="Digite o produto"
+        />
+        <button onClick={searchByText} className={styles.search__btn}>Buscar</button>
       </div>
     </header>
-  )
+  );
 }
