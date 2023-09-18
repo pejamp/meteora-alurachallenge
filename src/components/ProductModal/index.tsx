@@ -1,8 +1,6 @@
-import React from "react";
 import { Modal } from "../Modal";
 import { Button } from "../Button";
 import styles from "./ProductModal.module.scss";
-import jaquetaImage from "src/assets/Mobile/Imagens cards/Card jaqueta jeans.png";
 
 interface ProductModalProps {
   isOpen: boolean;

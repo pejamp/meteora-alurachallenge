@@ -51,10 +51,15 @@
       &__link {
         color: $white;
         font-size: 13px;
+        transition: color 150ms ease-in;
 
         a {
           color: inherit;
           text-decoration: none;
+        }
+
+        &:hover {
+          color: $dark-purple;
         }
 
         @include responsive-layout($bp-desktop) {
@@ -123,6 +128,12 @@
       background: transparent;
       font-weight: 500;
       cursor: pointer;
+      transition: all 150ms ease-in;
+
+      &:hover {
+        background: $button-background;
+        border-color: $button-background;
+      }
 
       @include responsive-layout($bp-tablet) {
         border-color: $white;

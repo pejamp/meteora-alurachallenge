@@ -6,4 +6,10 @@
   border: 0;
   color: $white;
   cursor: pointer;
+  transition: all 150ms ease-in;
+
+  &:hover {
+    background: $black;
+    color: $white;
+  }
 }
