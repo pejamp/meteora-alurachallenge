@@ -1,6 +1,6 @@
 <h1 align="center">
     <br>
-    <img src="./src/assets/Favicon-64px.png" width="260px" alt="">
+    <img src="./src/assets/Favicon-64px.png" alt="">
 </h1>
 
 <h4 align="center">
@@ -52,7 +52,7 @@ $ npm run dev
 
 ## 🌐 Projeto
 
-- [Deploy]()
+- [Deploy](https://meteora-alurachallenge-pedrojrodrigues.vercel.app/)
 
 ## 👨‍💻 Autor
 
