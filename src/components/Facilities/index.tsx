@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Facilities.module.scss";
 import { Facility } from "../Facility";
 import diamondIcon from "src/assets/Desktop/icones/x-diamond.png";

@@ -1,6 +1,6 @@
 <h1 align="center">
     <br>
-    <img src="./src/assets/Desktop/logo-desktop.png" width="260px" alt="">
+    <img src="./src/assets/Favicon-64px.png" width="260px" alt="">
 </h1>
 
 <h4 align="center">
